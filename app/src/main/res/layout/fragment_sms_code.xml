@@ -1,70 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
+    android:background="@color/mainRed"
     android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageView2"
+        android:layout_marginTop="70sp"
+        android:layout_marginBottom="40sp"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:src="@drawable/ic_vk" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="Введите код из смс"
+        style="@style/TextViewSMSCode"
+        android:text="Введите код"
         android:textSize="26sp" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="200sp"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
+        style="@style/TextViewSMSCode"
         android:padding="16sp"
-        android:text="На указанный вами номер телефона было отправлено смс с кодом авторизации" />
+        android:text="На указанный номер телефона выслан код" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <EditText
             android:id="@+id/etCodeOne"
+            style="@style/EditTextSMSCode"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_margin="16dp"
             android:hint="1"
-            android:maxLength="1"
-            android:inputType="number"
-            android:gravity="center"
             />
 
         <EditText
             android:id="@+id/etCodeTwo"
+            style="@style/EditTextSMSCode"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_margin="16dp"
-            android:hint="2"
-            android:maxLength="1"
-            android:inputType="number"
-            android:gravity="center"/>
+            android:hint="2"/>
 
         <EditText
             android:id="@+id/etCodeThree"
+            style="@style/EditTextSMSCode"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_margin="16dp"
-            android:hint="3"
-            android:maxLength="1"
-            android:inputType="number"
-            android:gravity="center"/>
+            android:hint="3"/>
 
         <EditText
             android:id="@+id/etCodeFour"
+            style="@style/EditTextSMSCode"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_margin="16dp"
-            android:hint="4"
-            android:maxLength="1"
-            android:inputType="number"
-            android:gravity="center"/>
+            android:hint="4"/>
+
     </LinearLayout>
 
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/TextViewSMSCode"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sms_code_timer" />
+
+        <TextView
+            android:id="@+id/tvTimer"
+            style="@style/TextViewSMSCode"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text=" 02:00"/>
+    </LinearLayout>
 
     <ProgressBar
         android:id="@+id/pbLoading"
@@ -72,11 +105,14 @@
         android:visibility="gone"
         android:layout_height="wrap_content"/>
 
-    <com.google.android.material.button.MaterialButton
+
+    <Button
         android:id="@+id/btnResendCode"
-        android:layout_width="match_parent"
+        style="@style/MainButton"
+        android:background="@drawable/style_button"
+        android:layout_marginTop="20sp"
+        android:layout_width="250sp"
         android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:text="Отправить код"/>
+        android:text="@string/resend_code"/>
 
 </LinearLayout>

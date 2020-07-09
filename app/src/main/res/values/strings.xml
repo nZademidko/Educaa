@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">EnglishWords</string>
+    <string name="move_on">Действуй</string>
+    <string name="users_agreement_1">Нажимая кнопку \"Войти\", Вы соглашаетесь с нашими</string>
+    <string name="users_agreement_2">Условиями конфиденциальности</string>
+    <string name="users_agreement_3">и</string>
+    <string name="users_agreement_4">Пользовательским соглашением</string>
+    <string name="example_number">79999999999</string>
+    <string name="sms_code_timer">Отправить код повторно через</string>
+    <string name="resend_code">Отправить код повторно</string>
 </resources>

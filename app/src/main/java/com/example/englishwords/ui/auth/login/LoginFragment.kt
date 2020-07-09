@@ -22,8 +22,37 @@ class LoginFragment: BaseFragment(), RegistrationView{
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        btnLogin?.setOnClickListener(){
-                presenter.onContinuePressed(etPhone?.text?.toString() ?: "")
+        initListeners()
+    }
+
+    private fun initListeners(){
+        btnLoginWithPhone?.setOnClickListener(){
+            presenter.onBtnLoginPhoneContinuePressed(etPhone?.text?.toString() ?: "")
+        }
+
+        btnLoginWithGoogle?.setOnClickListener(){
+            presenter.onBtnLoginGooglePressed()
+            showError("Google")
+        }
+
+        btnLoginWithVk?.setOnClickListener(){
+            presenter.onBtnLoginVkPressed()
+            showError("Vk")
+        }
+
+        btnLoginWithInstagram?.setOnClickListener(){
+            presenter.onBtnLoginInstagramPressed()
+            showError("Instagram")
+        }
+
+        tvConfCond?.setOnClickListener {
+            presenter.onTVConfCondPressed()
+            showError("Условия конфиденциальности")
+        }
+
+        tvUserAgreement.setOnClickListener {
+            presenter.onTVUserAgreementPressed()
+            showError("Пользовательское соглашение")
         }
     }
 

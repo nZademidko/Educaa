@@ -1,59 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
-    android:background="#e24653"
-    android:orientation="vertical"
+    android:background="@color/mainRed"
     android:layout_width="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="60sp"
-        android:layout_marginTop="70dp"
-        android:layout_marginRight="70dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginBottom="20dp"
-        app:srcCompat="@mipmap/ic_launcher" />
-
-
-    <TextView
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Действуй."
-        android:gravity="center"
-        android:layout_marginBottom="30sp"
-        android:textColor="@color/colorWhite"
-        android:textSize="40sp"/>
-
-
-    <EditText
-        android:id="@+id/etPhone"
-        android:layout_width="match_parent"
-
-        android:background="@drawable/style_edittext"
-        android:layout_height="wrap_content"
+        android:layout_above="@+id/LoginLayout"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="79999999999"
-        android:inputType="phone"
-        android:maxLength="11" />
+        android:layout_marginBottom="-70dp"
+        android:orientation="vertical">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnLogin"
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginRight="70dp"
+            android:layout_marginBottom="20dp"
+            app:srcCompat="@drawable/ic_vk" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30sp"
+            android:gravity="center"
+            android:text="@string/move_on"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+
+
+        <EditText
+            android:id="@+id/etPhone"
+            android:background="@drawable/style_edit_text"
+            android:textColor="@color/grey"
+            android:textColorHint="@color/grey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:gravity="center"
+            android:hint="@string/example_number"
+            android:inputType="phone"
+            android:maxLength="11"/>
+
+        <Button
+            android:id="@+id/btnLoginWithPhone"
+            style="@style/MainButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="90sp"
+            android:text="Войти"
+            android:layout_marginTop="35sp"
+            android:layout_marginRight="90sp"
+             />
+
+        <TextView
+            style="@style/TextViewLoginBase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:text="@string/users_agreement_1" />
+
+        <TextView
+            android:id="@+id/tvConfCond"
+            style="@style/TextViewLoginBase.Clickable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/users_agreement_2" />
+
+        <TextView
+            style="@style/TextViewLoginBase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/users_agreement_3" />
+
+        <TextView
+            android:id="@+id/tvUserAgreement"
+            style="@style/TextViewLoginBase.Clickable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/users_agreement_4" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LoginLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/etPhone"
-        android:layout_marginTop="35sp"
-        android:layout_marginLeft="90sp"
-        android:layout_marginRight="90sp"
-        android:text="Войти"
-        android:background="@drawable/style_button"
-        android:textAllCaps="false" />
+        android:layout_height="50sp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_marginBottom="30sp">
 
-</LinearLayout>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnLoginWithGoogle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_google_symbol"
+            android:layout_weight="1"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnLoginWithVk"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_vk"
+            android:layout_weight="1"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnLoginWithInstagram"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_instagram"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

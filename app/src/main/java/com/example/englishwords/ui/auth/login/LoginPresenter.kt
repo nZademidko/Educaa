@@ -18,7 +18,7 @@ class RegistrationPresenter: BasePresenter<RegistrationView>(){
         private const val PHONE_NUMBER_LENGTH = 11
     }
 
-    fun onContinuePressed(phone: String){
+    fun onBtnLoginPhoneContinuePressed(phone: String){
 
         //TODO РЕАЛИЗОВАТЬ ПОЛУЧЕНИЕ ОТВЕТА С СЕРВЕРА (ТАМ ЖЕ И БУДУ ПОЛУЧАТЬ ОШИБКИ)
         if(!isPhoneValid(phone)){
@@ -26,6 +26,26 @@ class RegistrationPresenter: BasePresenter<RegistrationView>(){
             return
         }
         viewState.toSMSCodeFragment(phone)
+    }
+
+    fun onBtnLoginGooglePressed(){
+
+    }
+
+    fun onBtnLoginVkPressed(){
+
+    }
+
+    fun onBtnLoginInstagramPressed(){
+
+    }
+
+    fun onTVConfCondPressed(){
+
+    }
+
+    fun onTVUserAgreementPressed(){
+
     }
 
     private fun isPhoneValid(phone: String): Boolean{

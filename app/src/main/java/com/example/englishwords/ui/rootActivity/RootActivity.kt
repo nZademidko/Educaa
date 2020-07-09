@@ -1,7 +1,10 @@
 package com.example.englishwords.ui.rootActivity
 
+import android.os.Build
 import android.os.Bundle
 import android.os.SystemClock
+import android.view.Window
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -10,6 +13,7 @@ import com.arellomobile.mvp.presenter.InjectPresenter
 import com.example.englishwords.R
 import com.example.englishwords.ui.auth.login.LoginFragment
 import com.example.englishwords.ui.base.BaseContainer
+import com.example.englishwords.ui.base.BaseFragment
 import com.example.englishwords.ui.base.OnBackPressed
 
 class RootActivity : MvpAppCompatActivity(), RootView{
@@ -29,6 +33,7 @@ class RootActivity : MvpAppCompatActivity(), RootView{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         createBaseContainer()
     }
 
@@ -52,6 +57,7 @@ class RootActivity : MvpAppCompatActivity(), RootView{
 
 
 
+    private var fragmentsArray: List<Fragment> = listOf<Fragment>() as List<Fragment>
     override fun onBackPressed() {
 
 
@@ -62,7 +68,9 @@ class RootActivity : MvpAppCompatActivity(), RootView{
                 it.childFragmentManager.fragments.firstOrNull()?.let{fragment ->
                     if(fragment.isVisible && fragment is OnBackPressed){
                         if(!fragment.onBackPressed()) exitFromApp()
-                        
+                        else{
+                            it.childFragmentManager.popBackStackImmediate()
+                        }
                     }
                 }
             }
